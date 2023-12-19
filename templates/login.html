@@ -1,0 +1,203 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Adara - Modern & Multipurpose eCommerce Template</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<link rel="shortcut icon" type="image/x-icon" href="img/favicon.png">
+        <!-- Place favicon.ico in the root directory -->
+
+		<!-- CSS here -->
+        <link rel="stylesheet" href="/static/assets/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/static/assets/css/animate.min.css">
+        <link rel="stylesheet" href="/static/assets/css/magnific-popup.css">
+        <link rel="stylesheet" href="/static/assets/css/fontawesome-all.min.css">
+        <link rel="stylesheet" href="/static/assets/css/jquery.mCustomScrollbar.min.css">
+        <link rel="stylesheet" href="/static/assets/css/bootstrap-datepicker.min.css">
+        <link rel="stylesheet" href="/static/assets/css/swiper-bundle.min.css">
+        <link rel="stylesheet" href="/static/assets/css/jquery-ui.min.css">
+        <link rel="stylesheet" href="/static/assets/css/nice-select.css">
+        <link rel="stylesheet" href="/static/assets/css/jarallax.css">
+        <link rel="stylesheet" href="/static/assets/css/flaticon.css">
+        <link rel="stylesheet" href="/static/assets/css/slick.css">
+        <link rel="stylesheet" href="/static/assets/css/default.css">
+        <link rel="stylesheet" href="/static/assets/css/style.css">
+        <link rel="stylesheet" href="/static/assets/css/responsive.css">
+    </head>
+    <body>
+
+
+        <!-- preloader  -->
+        <div id="preloader">
+            <div id="ctn-preloader" class="ctn-preloader">
+                <div class="animation-preloader">
+                    <div class="spinner"></div>
+                </div>
+                <div class="loader">
+                    <div class="row">
+                        <div class="col-3 loader-section section-left">
+                            <div class="bg"></div>
+                        </div>
+                        <div class="col-3 loader-section section-left">
+                            <div class="bg"></div>
+                        </div>
+                        <div class="col-3 loader-section section-right">
+                            <div class="bg"></div>
+                        </div>
+                        <div class="col-3 loader-section section-right">
+                            <div class="bg"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- preloader end -->
+
+
+		<!-- Scroll-top -->
+        <button class="scroll-top scroll-to-target" data-target="html">
+            <i class="fas fa-angle-up"></i>
+        </button>
+        <!-- Scroll-top-end-->
+
+        <!-- header-area -->
+        <header class="header-style-three">
+            <div class="header-top-wrap">
+                <div class="container custom-container-two">
+                    <div class="row align-items-center justify-content-center">
+                        <div class="col-sm-6">
+                            <div class="header-top-link">
+                                <ul>
+                                    <li><a href="about-us.html">About US</a></li>
+                                    <li><a href="#">FAQS</a></li>
+                                    <li><a href="tel:123456789">PH +1 325 362 3521</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="header-top-right">
+                                <div class="lang">
+                                    <select name="select">
+                                        <option value="">English</option>
+                                        <option value="">Spanish</option>
+                                        <option value="">Turkish</option>
+                                        <option value="">Russian</option>
+                                        <option value="">Chinese</option>
+                                    </select>
+                                </div>
+                                <div class="currency">
+                                    <form action="#">
+                                        <select name="select">
+                                            <option value="">USD</option>
+                                            <option value="">AUE</option>
+                                            <option value="">SAR</option>
+                                            <option value="">INR</option>
+                                            <option value="">BDT</option>
+                                        </select>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            
+
+        </header>
+        <!-- header-area-end -->
+
+        <!-- main-area -->
+        <main>
+
+                        <!-- breadcrumb-area-end -->
+
+            <!-- contact-area -->
+            <section class="contact-area pt-100 pb-100">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-8">
+                            <div class="contact-wrap">
+                                <!-- Jinja tempplating for showing flash messages-->
+                        {% with messages = get_flashed_messages(with_categories=true) %}
+                        {% if messages %}
+                            {% for category, message in messages %}
+                                <div class="alert alert-{{category}} alert-dismissible fade show" role="alert">
+                                {{message}}
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                                </button>
+                                </div>
+                            {% endfor %}
+                            {% endif %}
+                        {% endwith %}
+                                <div class="section-title title-style-three mb-30">
+                                    <div  class="col-md-12 text-center">
+                                    <h2 class="title">Login</h2>
+                                    </div>
+                                </div>
+                                <form action="/" method="post" class="contact-form">
+                                    <div class="form-group">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                        <label>Your Email:</label>
+                                            <input name="login" type="text" placeholder="User Name *">
+                                        </div>
+                                        
+                                        <br>
+                                        <br>
+                                        <br>
+                                        <div class="col-md-6">
+                                        <label>Your Password:</label>
+                                            <input name="password" type="password" placeholder="Your Password *">
+                                        </div>
+                                        
+                                    </div>
+                                    </div>
+                                    
+                                    <div class="col-md-12 text-center"><button  class="btn">Login</button></div>
+                                    <br><br><br>
+                                    <p  class="col-md-12 text-center">I have'nt an account <a href="/register">Register</a></p>
+                                </form>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </section>
+            <!-- contact-area-end -->
+
+            
+        </main>
+        <!-- main-area-end -->
+
+
+        
+
+
+
+
+
+		<!-- JS here -->
+        <script src="/static/assets/js/vendor/jquery-3.5.0.min.js"></script>
+        <script src="/static/assets/js/popper.min.js"></script>
+        <script src="/static/assets/js/bootstrap.min.js"></script>
+        <script src="/static/assets/js/isotope.pkgd.min.js"></script>
+        <script src="/static/assets/js/imagesloaded.pkgd.min.js"></script>
+        <script src="/static/assets/js/jquery.magnific-popup.min.js"></script>
+        <script src="/static/assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+        <script src="/static/assets/js/bootstrap-datepicker.min.js"></script>
+        <script src="/static/assets/js/jquery.nice-select.min.js"></script>
+        <script src="/static/assets/js/jquery.countdown.min.js"></script>
+        <script src="/static/assets/js/swiper-bundle.min.js"></script>
+        <script src="/static/assets/js/jarallax.min.js"></script>
+        <script src="/static/assets/js/slick.min.js"></script>
+        <script src="/static/assets/js/wow.min.js"></script>
+        <script src="/static/assets/js/nav-tool.js"></script>
+        <script src="/static/assets/js/plugins.js"></script>
+        <script src="/static/assets/js/main.js"></script>
+    </body>
+</html>

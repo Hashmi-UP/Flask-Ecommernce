@@ -1,0 +1,124 @@
+{% extends "layouts/layout.html" %}
+
+{% block body %}
+        <!-- main-area -->
+        <main>
+
+            <!-- breadcrumb-area -->
+            <section class="breadcrumb-area breadcrumb-bg" data-background="static/assets/img/bg/imagebg.png">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="breadcrumb-content">
+                                <h2 style="color: #ff5d0e;">Our Blog</h2>
+                                <nav aria-label="breadcrumb">
+                                    <ol class="breadcrumb">
+                                        <li class="breadcrumb-item" ><a href="/">Home</a></li>
+                                        <li class="breadcrumb-item active" aria-current="page" style="color: white;">Blog</li>
+                                    </ol>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- breadcrumb-area-end -->
+
+            <!-- blog-area -->
+            <section class="blog-area pt-100 pb-100">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-8">
+                            <div class="blog--post--item text-center">
+                                <div class="blog-post-thumb mb-35">
+                                    <a href="blog-details.html"><img src="static/assets/img/blog/blog__thumb01.jpg" alt=""></a>
+                                </div>
+                                <div class="blog-post-content">
+                                    <div class="tag"><a href="#">Shopping</a></div>
+                                    <h3><a href="blog-details.html">The Greatest Thing World Belong Excepted</a></h3>
+                                    <div class="blog-post-meta">
+                                        <ul>
+                                            <li><i class="far fa-user"></i>By <a href="#">Tomas Alexa</a></li>
+                                            <li><i class="far fa-calendar-alt"></i> Mar 10, 2021</li>
+                                        </ul>
+                                    </div>
+                                    <p>The purpose of lorem ipsum is create natural looking block of sentence doesn distract. Letset sheets containing Lorem
+                                    Ipsum passag and more recently with puhing.</p>
+                                    <a href="blog-details.html">Read More</a>
+                                </div>
+                            </div>
+                            <div class="blog--post--item text-center">
+                                <div class="blog-post-thumb mb-35">
+                                    <a href="blog-details.html"><img src="static/assets/img/blog/blog__thumb02.jpg" alt=""></a>
+                                </div>
+                                <div class="blog-post-content">
+                                    <div class="tag"><a href="#">Shopping</a></div>
+                                    <h3><a href="blog-details.html">Fashion is a Popular Aesthetic Expression Particular</a></h3>
+                                    <div class="blog-post-meta">
+                                        <ul>
+                                            <li><i class="far fa-user"></i>By <a href="#">Tomas Alexa</a></li>
+                                            <li><i class="far fa-calendar-alt"></i> Mar 10, 2021</li>
+                                        </ul>
+                                    </div>
+                                    <p>The purpose of lorem ipsum is create natural looking block of sentence doesn distract. Letset sheets containing Lorem
+                                    Ipsum passag and more recently with puhing.</p>
+                                    <a href="blog-details.html">Read More</a>
+                                </div>
+                            </div>
+                            <div class="blog--post--item text-center">
+                                <div class="blog-post-thumb mb-35">
+                                    <a href="blog-details.html"><img src="static/assets/img/blog/blog__thumb03.jpg" alt=""></a>
+                                </div>
+                                <div class="blog-post-content">
+                                    <div class="tag"><a href="#">Shopping</a></div>
+                                    <h3><a href="blog-details.html">Model is a Person with a Role Either to Promote</a></h3>
+                                    <div class="blog-post-meta">
+                                        <ul>
+                                            <li><i class="far fa-user"></i>By <a href="#">Tomas Alexa</a></li>
+                                            <li><i class="far fa-calendar-alt"></i> Mar 10, 2021</li>
+                                        </ul>
+                                    </div>
+                                    <p>The purpose of lorem ipsum is create natural looking block of sentence doesn distract. Letset sheets containing Lorem
+                                    Ipsum passag and more recently with puhing.</p>
+                                    <a href="blog-details.html">Read More</a>
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <div class="col-lg-4 col-md-8">
+                            <aside class="blog-sidebar">
+                                
+                                <div class="widget blog-sidebar-widget mb-45">
+                                    <div class="oc-newsletter">
+                                        <h4 class="title">NEWSLETTER</h4>
+                                        <p>Fill your email below to subscribe to my newsletter</p>
+                                        <form action="/newsletter" method="post">
+                                            <input type="email" name="email" placeholder="Email...">
+                                            <button type="submit" class="btn">Subscribe</button>
+                                        </form>
+                                        <div class="oc-social">
+                                            <h4 class="title">FOLLOW US</h4>
+                                            <ul>
+                                                <li><a href="/www.facebook.com"><i class="fab fa-facebook-f"></i></a></li>
+                                                <li><a href="/www.twittter.com"><i class="fab fa-twitter"></i></a></li>
+                                                <li><a href="/www.youtube.com"><i class="fab fa-youtube"></i></a></li>
+                                                <li><a href="/www.instagram.com"><i class="fab fa-instagram"></i></a></li>
+                                                <li><a href="/www.linkedin.com"><i class="fab fa-linkedin-in"></i></a></li>
+                                                <li><a href="/www.gooogle.com"><i class="fab fa-google"></i></a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                            </aside>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- blog-area-end -->
+
+        </main>
+        <!-- main-area-end -->
+
+
+        {% endblock %}

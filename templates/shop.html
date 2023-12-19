@@ -1,0 +1,105 @@
+{% extends "layouts/layout.html" %}
+{% block body%}
+<!-- main-area -->
+<main>
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+                        {% if messages %}
+                            {% for category, message in messages %}
+                                <div class="alert alert-{{category}} alert-dismissible fade show" role="alert">
+                                {{message}}
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                                </button>
+                                </div>
+                            {% endfor %}
+                            {% endif %}
+                        {% endwith %}
+
+    <!-- breadcrumb-area -->
+    <section class="breadcrumb-area breadcrumb-bg" data-background="static/assets/img/bg/imagebg.png">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="breadcrumb-content">
+                        <h2 style="color: #ff5d0e;">Our Shop</h2>
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                                <li class="breadcrumb-item active" aria-current="page" style="color: white;">Shop</li>
+                            </ol>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- breadcrumb-area-end -->
+
+    <!-- shop-area -->
+    <section class="shop-area pt-95 pb-100">
+        <div class="container">
+            <div class="row">
+                {%for prod in products.items %}
+                <div class="col-xl-3 col-lg-4 col-sm-6">
+                    <div class="new-arrival-item text-center mb-50">
+                        <div class="thumb mb-25">
+                            <!--<a href="shop-details.html"><img src="static/assets/img/product/n_arrival_product01.jpg" alt=""></a>-->
+                            {%set fname = 'products/' + prod.picture1 %}
+                            <a href='/product/{{prod.sno}}'><img src="{{url_for('static', filename=fname)}}" alt=""></a>
+
+                            <div class="product-overlay-action">
+                                <ul>
+                                    <li><a href="cart.html"><i class="far fa-heart"></i></a></li>
+                                    <li><a href='/product/{{prod.sno}}'><i class="far fa-eye"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="content">
+                            <h5><a href='/product/{{prod.sno}}'></a>{{prod.productname}}</h5>
+                            <span class="price">{{prod.price}}</span>
+                        </div>
+                    </div>
+
+                </div>
+                {%endfor%}
+
+
+            </div>
+
+            
+
+            <div class="pagination-wrap">
+                <nav aria-label="Page navigation">
+                <ul>
+                    
+                    {% for page_num in products.iter_pages(left_edge=2, left_current=2, right_current=5, right_edge=2) %}
+
+                    {% if page_num %}
+                    {% if page_num != products.page %}
+                    <div class="active">
+                    <li><a class="page-numbers" href="{{ url_for('index', page=page_num) }}">{{page_num}}</a></li>
+                    </div>
+                    {% else %}
+                    <strong>
+                        <li><a class="page-numbers current">{{ page_num }}</a>
+                    </strong>
+                    {% endif %}
+                    {% else %}
+                    <span class=ellipsis>…</span>
+                    {% endif %}
+                    {% endfor %}
+                    
+
+                    
+                </ul>
+            </nav>
+            </div>
+            
+        </div>
+    </section>
+    <!-- shop-area-end -->
+
+</main>
+<!-- main-area-end -->
+{% endblock %}

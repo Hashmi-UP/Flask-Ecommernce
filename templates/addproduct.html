@@ -1,0 +1,274 @@
+{% extends "layouts/layout.html" %}
+
+{% block body %}
+
+<body>
+    <div class="app align-content-stretch d-flex flex-wrap">
+        <div class="app-sidebar">
+            <div class="logo">
+                <a href="index.html" class="logo-icon"><span class="logo-text">Neptune</span></a>
+                <div class="sidebar-user-switcher user-activity-online">
+                    <a href="#">
+                        <img src="/static/adminassets/images/avatars/avatar.png">
+                        <span class="activity-indicator"></span>
+                        <span class="user-info-text">Chloe<br><span class="user-state-info">On a call</span></span>
+                    </a>
+                </div>
+            </div>
+            
+        </div>
+        <div class="app-container">
+            
+            <div class="app-header">
+                <nav class="navbar navbar-light navbar-expand-lg">
+                    <div class="container-fluid">
+                        <div class="navbar-nav" id="navbarNav">
+                            <ul class="navbar-nav">
+                                <li class="nav-item">
+                                    <a class="nav-link hide-sidebar-toggle-button" href="#"><i class="material-icons">first_page</i></a>
+                                </li>
+                                <li class="nav-item dropdown hidden-on-mobile">
+                                    <a class="nav-link dropdown-toggle" href="#" id="addDropdownLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        <i class="material-icons">add</i>
+                                    </a>
+                                    <ul class="dropdown-menu" aria-labelledby="addDropdownLink">
+                                        <li><a class="dropdown-item" href="#">New Workspace</a></li>
+                                        <li><a class="dropdown-item" href="#">New Board</a></li>
+                                        <li><a class="dropdown-item" href="#">Create Project</a></li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item dropdown hidden-on-mobile">
+                                    <a class="nav-link dropdown-toggle" href="#" id="exploreDropdownLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        <i class="material-icons-outlined">explore</i>
+                                    </a>
+                                    <ul class="dropdown-menu dropdown-lg large-items-menu" aria-labelledby="exploreDropdownLink">
+                                        <li>
+                                            <h6 class="dropdown-header">Repositories</h6>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="#">
+                                                <h5 class="dropdown-item-title">
+                                                    Neptune iOS
+                                                    <span class="badge badge-warning">1.0.2</span>
+                                                    <span class="hidden-helper-text">switch<i class="material-icons">keyboard_arrow_right</i></span>
+                                                </h5>
+                                                <span class="dropdown-item-description">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="#">
+                                                <h5 class="dropdown-item-title">
+                                                    Neptune Android
+                                                    <span class="badge badge-info">dev</span>
+                                                    <span class="hidden-helper-text">switch<i class="material-icons">keyboard_arrow_right</i></span>
+                                                </h5>
+                                                <span class="dropdown-item-description">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</span>
+                                            </a>
+                                        </li>
+                                        <li class="dropdown-btn-item d-grid">
+                                            <button class="btn btn-primary">Create new repository</button>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+            
+                        </div>
+                        <div class="d-flex">
+                            <ul class="navbar-nav">
+                                <li class="nav-item hidden-on-mobile">
+                                    <a class="nav-link active" href="#">Applications</a>
+                                </li>
+                                <li class="nav-item hidden-on-mobile">
+                                    <a class="nav-link" href="#">Reports</a>
+                                </li>
+                                <li class="nav-item hidden-on-mobile">
+                                    <a class="nav-link" href="#">Projects</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link toggle-search" href="#"><i class="material-icons">search</i></a>
+                                </li>
+                                <li class="nav-item hidden-on-mobile">
+                                    <a class="nav-link language-dropdown-toggle" href="#" id="languageDropDown" data-bs-toggle="dropdown"><img src="/static/adminassets/images/flags/us.png" alt=""></a>
+                                        <ul class="dropdown-menu dropdown-menu-end language-dropdown" aria-labelledby="languageDropDown">
+                                            <li><a class="dropdown-item" href="#"><img src="/static/adminassets/images/flags/germany.png" alt="">German</a></li>
+                                            <li><a class="dropdown-item" href="#"><img src="/static/adminassets/images/flags/italy.png" alt="">Italian</a></li>
+                                            <li><a class="dropdown-item" href="#"><img src="/static/adminassets/images/flags/china.png" alt="">Chinese</a></li>
+                                        </ul>
+                                </li>
+                                <li class="nav-item hidden-on-mobile">
+                                    <a class="nav-link nav-notifications-toggle" id="notificationsDropDown" href="#" data-bs-toggle="dropdown">4</a>
+                                    <div class="dropdown-menu dropdown-menu-end notifications-dropdown" aria-labelledby="notificationsDropDown">
+                                        <h6 class="dropdown-header">Notifications</h6>
+                                        <div class="notifications-dropdown-list">
+                                            <a href="#">
+                                                <div class="notifications-dropdown-item">
+                                                    <div class="notifications-dropdown-item-image">
+                                                        <span class="notifications-badge bg-info text-white">
+                                                            <i class="material-icons-outlined">campaign</i>
+                                                        </span>
+                                                    </div>
+                                                    <div class="notifications-dropdown-item-text">
+                                                        <p class="bold-notifications-text">Donec tempus nisi sed erat vestibulum, eu suscipit ex laoreet</p>
+                                                        <small>19:00</small>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                            <a href="#">
+                                                <div class="notifications-dropdown-item">
+                                                    <div class="notifications-dropdown-item-image">
+                                                        <span class="notifications-badge bg-danger text-white">
+                                                            <i class="material-icons-outlined">bolt</i>
+                                                        </span>
+                                                    </div>
+                                                    <div class="notifications-dropdown-item-text">
+                                                        <p class="bold-notifications-text">Quisque ligula dui, tincidunt nec pharetra eu, fringilla quis mauris</p>
+                                                        <small>18:00</small>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                            <a href="#">
+                                                <div class="notifications-dropdown-item">
+                                                    <div class="notifications-dropdown-item-image">
+                                                        <span class="notifications-badge bg-success text-white">
+                                                            <i class="material-icons-outlined">alternate_email</i>
+                                                        </span>
+                                                    </div>
+                                                    <div class="notifications-dropdown-item-text">
+                                                        <p>Nulla id libero mattis justo euismod congue in et metus</p>
+                                                        <small>yesterday</small>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                            <a href="#">
+                                                <div class="notifications-dropdown-item">
+                                                    <div class="notifications-dropdown-item-image">
+                                                        <span class="notifications-badge">
+                                                            <img src="/static/adminassets/images/avatars/avatar.png" alt="">
+                                                        </span>
+                                                    </div>
+                                                    <div class="notifications-dropdown-item-text">
+                                                        <p>Praesent sodales lobortis velit ac pellentesque</p>
+                                                        <small>yesterday</small>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                            <a href="#">
+                                                <div class="notifications-dropdown-item">
+                                                    <div class="notifications-dropdown-item-image">
+                                                        <span class="notifications-badge">
+                                                            <img src="/static/adminassets/images/avatars/avatar.png" alt="">
+                                                        </span>
+                                                    </div>
+                                                    <div class="notifications-dropdown-item-text">
+                                                        <p>Praesent lacinia ante eget tristique mattis. Nam sollicitudin velit sit amet auctor porta</p>
+                                                        <small>yesterday</small>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+            <div class="app-content">
+                <div class="content-wrapper">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col">
+                                <div class="page-description">
+                                    <h1>Add Product</h1>
+                                
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h5 class="card-title">Data Entry</h5>
+                                    </div>
+                                    <div class="card-body">
+                                        
+                                        <div class="example-container">
+                                            <div class="example-content">
+                                                <form action="/addproduct" method="post" class="row g-3" enctype="multipart/form-data">
+                                                    <div class="col-md-6">
+                                                        <label for="inputEmail4" class="form-label">Product ID</label>
+                                                        <input name="productid"type="text" class="form-control" id="inputEmail4">
+                                                    </div>
+
+                                                    <div class="col-md-6">
+                                                        <label for="inputEmail4" class="form-label">Product Name</label>
+                                                        <input name="productname" type="text" class="form-control" id="inputEmail4">
+                                                    </div>
+
+                                                    <div class="col-md-6">
+                                                        <label for="inputEmail4" class="form-label">Product category</label>
+                                                        <input name="category"type="text" class="form-control" id="inputEmail4">
+                                                    </div>
+
+                                                    <div class="col-md-6">
+                                                        <label for="inputEmail4" class="form-label">Product sub category</label>
+                                                        <input name="subcategory" type="text" class="form-control" id="inputEmail4">
+                                                    </div>
+                                                    
+                                                    <div class="col-12">
+                                                        <label for="inputAddress" class="form-label">Quantity</label>
+                                                        <input name="quantity" type="number" class="form-control" id="inputAddress">
+                                                    </div>
+                                                    
+                                                    <div class="col-md-6">
+                                                        <label for="inputCity" class="form-label">Colour</label>
+                                                        <input name="colour" type="text" class="form-control" id="inputCity">
+                                                    </div>
+
+                                                    <div class="col-md-6">
+                                                        <label for="inputCity" class="form-label">Price</label>
+                                                        <input name="price" type="number" class="form-control" id="inputCity">
+                                                    </div>
+                                                    
+                                                    <div class="col-md-6">
+                                                        <label for="inputCity" class="form-label">Picture 1</label>
+                                                        <input name="picture1" type="file" class="form-control" id="inputCity">
+                                                    </div>
+
+                                                    <div class="col-md-6">
+                                                        <label for="inputCity" class="form-label">Picture 2</label>
+                                                        <input name="picture2" type="file" class="form-control" id="inputCity">
+                                                    </div>
+
+                                                    <div class="col-md-6">
+                                                        <label for="inputCity" class="form-label">Picture 3</label>
+                                                        <input name="picture3" type="file" class="form-control" id="inputCity">
+                                                    </div>
+
+                                                    <div class="col-md-6">
+                                                        <label for="inputCity" class="form-label">Picture 4</label>
+                                                        <input name="picture4" type="file" class="form-control" id="inputCity">
+                                                    </div>
+
+                                                    <div class="col-12">
+                                                        <button type="submit" class="btn btn-primary">Done</button>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                            <div class="example-code">
+                                                
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {% endblock %}

@@ -1,0 +1,75 @@
+{% extends "layouts/adminlayout.html"%}
+
+{% block body %}
+        <!-- dashboard inside content start -->
+
+<div class="app-content">
+    <div class="content-wrapper">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col">
+                    <div class="page-description" style="text-align: center;">
+                        <h1>Product List</h1>
+                    </div>
+                </div>
+            </div>
+            <!-- Jinja tempplating for showing flash messages start-->
+            {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                    <div class="alert alert-{{category}} alert-dismissible fade show" role="alert">
+                    {{message}}
+                    <button type="button" class="btn-close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                    </div>
+                {% endfor %}
+            {% endif %}
+            {% endwith %}
+            <!-- Jinja tempplating for showing flash messages end-->
+            <div class="row">
+                <div class="col">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5 class="card-title">Basic</h5>
+                        </div>
+                        <div class="card-body">
+                            <table id="datatable1" class="display" style="width:100%">
+                                <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Product Name</th>
+                                        <th>Category</th>
+                                        <th>Sub Category</th>
+                                        <th>Color</th>
+                                        <th>Qty</th>
+                                        <th>Price</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {%for product in product%}
+                                    <tr>
+                                        <td>{{product.productid}}</td>
+                                        <td>{{product.productname}}</td>
+                                        <td>{{product.category}}</td>
+                                        <td>{{product.subcategory}}</td>
+                                        <td>{{product.colour}}</td>
+                                        <td>{{product.quantity}}</td>
+                                        <td>{{product.price}}</td>
+                                        <td><a href="/productdelete/{{product.productid}}"><button type="button" class="btn btn-danger btn-burger m-r-sm"><i class="material-icons">delete_outline</i></button></a></td>
+                                    </tr>
+                                    {%endfor%}
+                                </tbody>
+                                
+                            </table>
+                        </div>
+                    </div> 
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- dashboard inside content end -->
+
+{%endblock%}

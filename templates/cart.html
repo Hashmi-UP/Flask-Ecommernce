@@ -1,0 +1,99 @@
+{% extends "layouts/layout.html"%}
+
+{% block body %}
+<!-- main-area -->
+        <main>
+
+            <!-- breadcrumb-area -->
+            <section class="breadcrumb-area breadcrumb-bg" data-background="static/assets/img/bg/imagebg.png">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="breadcrumb-content">
+                                <h2 style="color: #ff5d0e;">Cart Page</h2>
+                                <nav aria-label="breadcrumb">
+                                    <ol class="breadcrumb">
+                                        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                                        <li class="breadcrumb-item active" aria-current="page" style="color: white;">Cart</li>
+                                    </ol>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- breadcrumb-area-end -->
+
+            <!-- cart-area -->
+            <div class="cart-area pt-100 pb-100">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="cart-wrapper">
+                                <div class="table-responsive">
+                                    <table class="table mb-0">
+                                        <thead>
+                                            <tr>
+                                                <th class="product-thumbnail"></th>
+                                                <th class="product-name">Product</th>
+                                                <th class="product-price">Price</th>
+                                                <th class="product-quantity">QUANTITY</th>
+                                                <th class="product-subtotal">SUBTOTAL</th>
+                                                <th class="product-delete"></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            {%for incart in incart %}
+                                            <tr>
+                                                <td class="product-thumbnail">
+                                                    {%set fname = 'products/' + incart.prod.picture1 %}
+                                                    <a href='/product/{{incart.sno}}'><img src="{{url_for('static', filename=fname)}}" alt=""></a>
+                                                </td>
+                                                <td class="product-name">
+                                                    <h4><a href="shop-details.html">{{incart.product_name}}</a></h4>
+                                                </td>
+                                                <td class="product-price">Rs.{{incart.prod.price}}</td>
+                                                <td class="product-price">{{incart.qty}}</td>
+                                                <td class="product-subtotal">{{incart.subtotal}}</td>
+                                                <td class="product-delete"><a href="/delete/{{incart.id}}"><i class="flaticon-trash"></i></a></td>
+                                            </tr>
+                                            {%endfor%}
+                                        </tbody>
+                                    </table>
+                                </div>
+                                
+                            </div>
+                            <div class="cart-total pt-95">
+                                <h3 class="title">CART TOTALS</h3>
+                                <div class="shop-cart-widget">
+                                    <form action="#">
+                                        <ul>
+                                            <li class="sub-total"><span>SUBTOTAL</span>{{subtotal}}</li>
+                                            <li>
+                                                <span>SHIPPING</span>
+                                                <div class="shop-check-wrap">
+                                                    <div class="custom-control custom-checkbox">
+                                                        <label class="custom-control-label" for="customCheck1">Over 1500 shopping delivery charges will be 0</label>
+                                                    </div>
+                                                    <div class="custom-control custom-checkbox">
+                                                        <label class="custom-control-label" for="customCheck2">Under 1500 shopping delivery charges will be 200</label>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="cart-total-amount"><span>TOTAL</span> <span class="amount">$ {{finaltotal}}</span></li>
+                                        </ul>
+                                        <a href="/checkout" class="btn">PROCEED TO CHECKOUT</a>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- cart-area-end -->
+
+        </main>
+        <!-- main-area-end -->
+
+
+    {% endblock %}

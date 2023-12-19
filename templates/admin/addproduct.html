@@ -1,0 +1,128 @@
+
+{% extends "layouts/adminlayout.html"%}
+
+{% block body %}
+        <!-- dashboard inside content start -->
+        
+            
+            
+            <div class="app-content">
+                <div class="content-wrapper">
+                    <div class="container-fluid">
+                        
+                        <div class="row" style="justify-content: center ">
+                            <div class="col-md-6" >
+                                <div class="card" >
+                                    <!-- Jinja tempplating for showing flash messages start-->
+                                        {% with messages = get_flashed_messages(with_categories=true) %}
+                                            {% if messages %}
+                                                {% for category, message in messages %}
+                                                    <div class="alert alert-{{category}} alert-dismissible fade show" role="alert">
+                                                    {{message}}
+                                                    <button type="button" class="btn-close" data-dismiss="alert" aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                    </div>
+                                                {% endfor %}
+                                            {% endif %}
+                                        {% endwith %}
+                                     <!-- Jinja tempplating for showing flash messages end-->
+                                    <div class="card-body">
+                                        <div class="col">
+                                            <div class="page-description" style="text-align: center;">
+                                                <h1>Add Product</h1>
+                                            </div>
+                                        </div>
+                                        <div class="example-container">
+                                            <div class="example-content">
+                                                <form action="/addproduct" method="post" class="row g-3" enctype="multipart/form-data">
+                                                    <div class="col-md-6">
+                                                        <label for="inputEmail4" class="form-label">Product ID</label>
+                                                        <input name="productid"type="text" class="form-control" id="inputEmail4">
+                                                    </div>
+
+                                                    <div class="col-md-6">
+                                                        <label for="inputEmail4" class="form-label">Product Name</label>
+                                                        <input name="productname" type="text" class="form-control" id="inputEmail4">
+                                                    </div>
+
+                                                    <div class="col-md-6">
+                                                        <label for="inputEmail4" class="form-label">Product category</label>
+                                                        <select name="category" id="inputState" class="form-select">
+                                                            <option selected="">Choose...</option>
+                                                            {%for category in category %}
+                                                            <option value="{{category.category}}">{{category.category}}</option>
+                                                            {%endfor%}                   
+                                                        </select>
+                                                    </div>
+
+                                                    <div class="col-md-6">
+                                                        <label for="inputEmail4" class="form-label">Product sub category</label>
+                                                        <select name="subcategory" id="inputState" class="form-select">
+                                                            <option selected="">Choose...</option>
+                                                            {%for subcategory in subcategory %}
+                                                            <option value="{{subcategory.subcategory}}">{{subcategory.subcategory}}</option>
+                                                            {%endfor%}
+                                                        </select>
+                                                    </div>
+                                                    
+                                                    <div class="col-12">
+                                                        <label for="inputAddress" class="form-label">Quantity</label>
+                                                        <input name="quantity" type="number" class="form-control" id="inputAddress">
+                                                    </div>
+                                                    
+                                                    <div class="col-md-6">
+                                                        <label for="inputCity" class="form-label">Colour</label>
+                                                        <input name="colour" type="text" class="form-control" id="inputCity">
+                                                    </div>
+
+                                                    <div class="col-md-6">
+                                                        <label for="inputCity" class="form-label">Price</label>
+                                                        <input name="price" type="number" class="form-control" id="inputCity">
+                                                    </div>
+                                                    
+                                                    <div class="col-md-6">
+                                                        <label for="inputCity" class="form-label">Picture 1</label>
+                                                        <input name="picture1" type="file" class="form-control" id="inputCity">
+                                                    </div>
+
+                                                    <div class="col-md-6">
+                                                        <label for="inputCity" class="form-label">Picture 2</label>
+                                                        <input name="picture2" type="file" class="form-control" id="inputCity">
+                                                    </div>
+
+                                                    <div class="col-md-6">
+                                                        <label for="inputCity" class="form-label">Picture 3</label>
+                                                        <input name="picture3" type="file" class="form-control" id="inputCity">
+                                                    </div>
+
+                                                    <div class="col-md-6">
+                                                        <label for="inputCity" class="form-label">Picture 4</label>
+                                                        <input name="picture4" type="file" class="form-control" id="inputCity">
+                                                    </div>
+
+                                                    <div class="col-md-12">
+                                                        <label for="inputCity" class="form-label">Description</label>
+                                                        <input name="description" type="text" class="form-control" id="inputCity">
+                                                    </div>
+
+                                                    
+
+                                                    <div class="col-12" style="text-align: center">
+                                                        <br>
+                                                        <button type="submit" class="btn btn-primary">Done</button>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- dashboard inside content end -->
+{%endblock%}

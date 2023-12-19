@@ -1,0 +1,695 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Adara - Modern & Multipurpose eCommerce Template</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<link rel="shortcut icon" type="image/x-icon" href="/static/assets/img/favicon.png">
+        <!-- Place favicon.ico in the root directory -->
+        
+		<!-- CSS here -->
+        <link rel="stylesheet" href="/static/assets/css/bootstrap.min.css">
+        <!--<link rel="stylesheet" href="/static/assets/css/bootstrap.min.css">-->
+        <link rel="stylesheet" href="/static/assets/css/animate.min.css">
+        <link rel="stylesheet" href="/static/assets/css/magnific-popup.css">
+        <link rel="stylesheet" href="/static/assets/css/fontawesome-all.min.css">
+        <link rel="stylesheet" href="/static/assets/css/jquery.mCustomScrollbar.min.css">
+        <link rel="stylesheet" href="/static/assets/css/bootstrap-datepicker.min.css">
+        <link rel="stylesheet" href="/static/assets/css/swiper-bundle.min.css">
+        <link rel="stylesheet" href="/static/assets/css/jquery-ui.min.css">
+        <link rel="stylesheet" href="/static/assets/css/nice-select.css">
+        <link rel="stylesheet" href="/static/assets/css/jarallax.css">
+        <link rel="stylesheet" href="/static/assets/css/flaticon.css">
+        <link rel="stylesheet" href="/static/assets/css/slick.css">
+        <link rel="stylesheet" href="/static/assets/css/default.css">
+        <link rel="stylesheet" href="/static/assets/css/style.css">
+        <link rel="stylesheet" href="/static/assets/css/responsive.css">
+    </head>
+    <body>
+
+
+        <!-- preloader  -->
+        <div id="preloader">
+            <div id="ctn-preloader" class="ctn-preloader">
+                <div class="animation-preloader">
+                    <div class="spinner"></div>
+                </div>
+                <div class="loader">
+                    <div class="row">
+                        <div class="col-3 loader-section section-left">
+                            <div class="bg"></div>
+                        </div>
+                        <div class="col-3 loader-section section-left">
+                            <div class="bg"></div>
+                        </div>
+                        <div class="col-3 loader-section section-right">
+                            <div class="bg"></div>
+                        </div>
+                        <div class="col-3 loader-section section-right">
+                            <div class="bg"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- preloader end -->
+
+
+		<!-- Scroll-top -->
+        <button class="scroll-top scroll-to-target" data-target="html">
+            <i class="fas fa-angle-up"></i>
+        </button>
+        <!-- Scroll-top-end-->
+
+        <!-- header-area -->
+        <header class="header-style-two">
+            <div id="sticky-header" class="main-header transparent-header menu-area">
+                <div class="container custom-container-two">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="mobile-nav-toggler"><i class="fas fa-bars"></i></div>
+                            <div class="menu-wrap">
+                                <nav class="menu-nav show">
+                                    <div class="logo">
+                                       
+                                        <a href="index.html" class="main-logo"><img src="/static/assets/logo3.png" alt="Logo"></a>
+
+                                        
+                                        <a href="index.html" class="sticky-logo"></a><img src="/static/assets/logo4.png" alt="My image"></a>
+
+                                        
+                                    </div>
+                                    <div class="navbar-wrap main-menu d-none d-lg-flex">
+                                        <ul class="navigation">
+                                            <li class="active menu-item-has-children has--mega--menu"><a href="/">Home</a>
+                                                
+                                            </li>
+                                            <li class="has--mega--menu"><a href="/shop">Shop</a>
+                                                
+                                            </li>
+                                            <li><a href="/about">About Us</a></li>
+                                            <li class="menu-item-has-children"><a href="/blog">blog</a>
+                                                
+                                            </li>
+                                            <li><a href="/contact">Contact Us</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="header-action d-none d-md-block">
+                                        <ul>
+                                            <li class="header-search"><a href="#" data-toggle="modal" data-target="#search-modal"><i class="flaticon-search"></i></a></li>
+                                            <li class="header-shop-cart"><a href="/cart"><i class="flaticon-shopping-bag"></i><span>{{countcart}}</span></a>
+                                                <ul class="minicart">
+                                                    {% for incart in incart %}
+                                                    <li class="d-flex align-items-start">
+                                                        <div class="cart-img">
+                                                            {%set fname = 'products/' + incart.prod.picture1 %}
+                                                            <a href='/product/{{incart.sno}}'><img src="{{url_for('static', filename=fname)}}" alt=""></a>
+                                                            <!-- <a href="#"><img src="static/assets/img/product/cart_p02.jpg" alt=""></a> -->
+                                                        </div>
+                                                        <div class="cart-content">
+                                                            <h4><a href="#">{{incart.product_name}}</a></h4>
+                                                            <div class="cart-price">
+                                                                <span class="new">{{incart.product_price}}</span>
+                                                                <span><del>{{incart.product_price}}</del></span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="del-icon">
+                                                            <a href="/delete/{{incart.id}}"><i class="far fa-trash-alt"></i></a>
+                                                        </div>
+                                                    </li>
+                                                    {%endfor%}
+                                                    <li>
+                                                        <div class="total-price">
+                                                            <span class="f-left">Total:</span>
+                                                            <span class="f-right">$239.9</span>
+                                                        </div>
+                                                    </li>
+                                                    <li>
+                                                        <div class="checkout-link">
+                                                            <a href="#">Shopping Cart</a>
+                                                            <a class="black-color" href="#">Checkout</a>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                          
+
+                                            <li class="header-shop-cart"><a href="#"><i class="flaticon-user-profile"></i></a>
+                                                <ul class="minicart">
+                                                    <li>{{username}}</li>
+                                                    <li><a href="/logout">Logout</a></li>
+                                                </ul>
+                                            </li>
+                                            
+                                        </ul>
+                                    </div>
+                                </nav>
+                            </div>
+                            <!-- Mobile Menu  -->
+                            <div class="mobile-menu">
+                                <div class="close-btn"><i class="flaticon-targeting-cross"></i></div>
+                                <nav class="menu-box">
+                                    <div class="nav-logo"><a href="index.html"><img src="/static/assets/img/logo/logo.png" alt="" title=""></a>
+                                    </div>
+                                    <div class="menu-outer">
+                                        <ul class="navigation">
+                                            <li class="active menu-item-has-children"><a href="#">Home</a>
+                                                <ul class="submenu">
+                                                    <li><a href="index.html">Home One</a></li>
+                                                    <li><a href="index-2.html">Home Two</a></li>
+                                                    <li class="active"><a href="index-3.html">Home Three</a></li>
+                                                    <li><a href="index-4.html">Home Four</a></li>
+                                                    <li><a href="index-5.html">Home Five</a></li>
+                                                    <li><a href="index-6.html">Home Six</a></li>
+                                                    <li><a href="index-7.html">Home Seven</a></li>
+                                                    <li><a href="index-8.html">Home Eight</a></li>
+                                                    <li><a href="index-9.html">Home Nine</a></li>
+                                                </ul>
+                                            </li>
+                                            <li class="menu-item-has-children"><a href="#">Shop</a>
+                                                <ul class="submenu">
+                                                    <li><a href="shop.html">Shop Page</a></li>
+                                                    <li><a href="shop-sidebar.html">Shop Sidebar</a></li>
+                                                    <li><a href="shop-details.html">Shop Details</a></li>
+                                                    <li><a href="cart.html">Cart Page</a></li>
+                                                    <li><a href="cart.html">Checkout Page</a></li>
+                                                </ul>
+                                            </li>
+                                            <li><a href="about-us.html">About Us</a></li>
+                                            <li class="menu-item-has-children"><a href="#">blog</a>
+                                                <ul class="submenu">
+                                                    <li><a href="blog.html">Our Blog</a></li>
+                                                    <li><a href="blog-details.html">Blog Details</a></li>
+                                                </ul>
+                                            </li>
+                                            <li><a href="contact.html">Contact Us</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="social-links">
+                                        <ul class="clearfix">
+                                            <li><a href="#"><span class="fab fa-twitter"></span></a></li>
+                                            <li><a href="#"><span class="fab fa-facebook-square"></span></a></li>
+                                            <li><a href="#"><span class="fab fa-pinterest-p"></span></a></li>
+                                            <li><a href="#"><span class="fab fa-instagram"></span></a></li>
+                                            <li><a href="#"><span class="fab fa-youtube"></span></a></li>
+                                        </ul>
+                                    </div>
+                                </nav>
+                            </div>
+                            <div class="menu-backdrop"></div>
+                            <!-- End Mobile Menu -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal Search -->
+            <div class="modal fade" id="search-modal" tabindex="-1" role="dialog" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <form>
+                            <input type="text" placeholder="Search here...">
+                            <button><i class="flaticon-search"></i></button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <!-- Modal Search-end -->
+
+            <!-- off-canvas-start -->
+            <div class="sidebar-toggle-btn"><a href="#" class="navSidebar-button"><img src="/static/assets/img/icon/sidebar_toggle_icon.png" alt=""></a></div>
+            <div class="sidebar-off-canvas info-group">
+                <div class="off-canvas-overlay"></div>
+                <div class="off-canvas-widget scroll">
+                    <div class="sidebar-widget-container">
+                        <div class="off-canvas-heading">
+                            <a href="#" class="close-side-widget">
+                                <span class="flaticon-targeting-cross"></span>
+                            </a>
+                        </div>
+                        <div class="sidebar-textwidget">
+                            <div class="sidebar-info-contents">
+                                <div class="content-inner">
+                                    <div class="logo mb-30">
+                                        <a href="index.html"><img src="/static/assets/img/logo/logo.png" alt=""></a>
+                                    </div>
+                                    <div class="content-box">
+                                        <p>WooCommerce and WordPress are both free, open source software reasons many ...</p>
+                                    </div>
+                                    <div class="contact-info">
+                                        <h4 class="title">CONTACT US</h4>
+                                        <ul>
+                                            <li><span class="flaticon-phone-call"></span><a href="tel:123456789">+9 325 444 0000</a></li>
+                                            <li><span class="flaticon-email"></span><a href="mailto:adara@info.com">adara@info.com</a></li>
+                                            <li><span class="flaticon-place"></span>71 Park Lan Street 2355 NY</li>
+                                        </ul>
+                                    </div>
+                                    <div class="oc-newsletter">
+                                        <h4 class="title">NEWSLETTER</h4>
+                                        <p>Fill your email below to subscribe to my newsletter</p>
+                                        <form action="#">
+                                            <input type="email" placeholder="Email...">
+                                            <button class="btn">Subscribe</button>
+                                        </form>
+                                    </div>
+                                    <div class="oc-social">
+                                        <ul>
+                                            <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                                            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                                            <li><a href="#"><i class="fab fa-youtube"></i></a></li>
+                                            <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                                            <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+                                            <li><a href="#"><i class="fab fa-google"></i></a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="oc-bottom">
+                                        <div class="currency">
+                                            <form action="#">
+                                                <label>Currency</label>
+                                                <select name="select">
+                                                    <option value="">USD</option>
+                                                    <option value="">AUE</option>
+                                                    <option value="">SAR</option>
+                                                    <option value="">INR</option>
+                                                    <option value="">BDT</option>
+                                                </select>
+                                            </form>
+                                        </div>
+                                        <div class="language">
+                                            <form action="#">
+                                                <label>Language</label>
+                                                <select name="select">
+                                                    <option value="">English</option>
+                                                    <option value="">Spanish</option>
+                                                    <option value="">Turkish</option>
+                                                    <option value="">Russian</option>
+                                                    <option value="">Chinese</option>
+                                                </select>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- off-canvas-end -->
+
+        </header>
+        <!-- header-area-end -->
+
+        <!-- main-area -->
+        <main>
+
+            <!-- slider-area -->
+            <section class="slider-area position-relative">
+                <div class="third-slider-active">
+                    <div class="third-slider-item third-slider-bg" data-background="/static/assets/img/slider/third_slider_bg.jpg">
+                        <div class="container custom-container-two">
+                            <div class="third-slider-wrap">
+                                <div class="row align-items-center">
+                                    <div class="col-lg-6">
+                                        <div class="slider-content">
+                                            <h3 class="sub-title" data-animation-in="fadeInUp" data-delay-in=".2" data-duration-in="1.5">best offer !</h3>
+                                            <h2 class="title" data-animation-in="fadeInUp" data-delay-in=".4" data-duration-in="1.5">Gym sports shoes</h2>
+                                            <p data-animation-in="fadeInUp" data-delay-in=".6" data-duration-in="1.5">Get up to 50% off Today Only</p>
+                                            <a href="shop-sidebar.html" class="btn" data-animation-in="fadeInUp" data-delay-in=".8" data-duration-in="1.5">Shop now</a>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="third-slider-img">
+                                            <div class="img-shape" data-background="/static/assets/img/slider/third_slide_shape.png" data-animation-in="zoomIn"
+                                                data-delay-in="1" data-duration-in="1.5"></div>
+                                            <img src="/static/assets/img/shoes2.png" alt="" class="main-img" data-animation-in="slideInRight2"
+                                                data-delay-in="1" data-duration-in="1.5">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="third-slider-item third-slider-bg" data-background="/static/assets/img/slider/third_slider_bg.jpg">
+                        <div class="container custom-container-two">
+                            <div class="third-slider-wrap">
+                                <div class="row align-items-center">
+                                    <div class="col-lg-6">
+                                        <div class="slider-content">
+                                            <h3 class="sub-title" data-animation-in="fadeInUp" data-delay-in=".2" data-duration-in="1.5">top deal !</h3>
+                                            <h2 class="title" data-animation-in="fadeInUp" data-delay-in=".4" data-duration-in="1.5">athletes shoes</h2>
+                                            <p data-animation-in="fadeInUp" data-delay-in=".6" data-duration-in="1.5">Get up to 50% off Today Only</p>
+                                            <a href="shop-sidebar.html" class="btn" data-animation-in="fadeInUp" data-delay-in=".8" data-duration-in="1.5">Shop now</a>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="third-slider-img">
+                                            <div class="img-shape" data-background="img/slider/third_slide_shape.png" data-animation-in="zoomIn"
+                                                data-delay-in="1" data-duration-in="1.5"></div>
+                                            <img src="/static/assets/img/slider/third_slider_img02.png" alt="" class="main-img" data-animation-in="slideInRight2"
+                                                data-delay-in="1" data-duration-in="1.5">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="third-slider-item third-slider-bg" data-background="/static/assets/img/slider/third_slider_bg.jpg">
+                        <div class="container custom-container-two">
+                            <div class="third-slider-wrap">
+                                <div class="row align-items-center">
+                                    <div class="col-lg-6">
+                                        <div class="slider-content">
+                                            <h3 class="sub-title" data-animation-in="fadeInUp" data-delay-in=".2" data-duration-in="1.5">top deal !</h3>
+                                            <h2 class="title" data-animation-in="fadeInUp" data-delay-in=".4" data-duration-in="1.5">New sports shoes</h2>
+                                            <p data-animation-in="fadeInUp" data-delay-in=".6" data-duration-in="1.5">Get up to 50% off Today Only</p>
+                                            <a href="shop-sidebar.html" class="btn" data-animation-in="fadeInUp" data-delay-in=".8" data-duration-in="1.5">Shop now</a>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="third-slider-img">
+                                            <div class="img-shape" data-background="img/slider/third_slide_shape.png" data-animation-in="zoomIn"
+                                                data-delay-in="1" data-duration-in="1.5"></div>
+                                            <img src="/static/assets/img/slider/third_slider_img03.png" alt="" class="main-img" data-animation-in="slideInRight2"
+                                                data-delay-in="1" data-duration-in="1.5">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="third-slider-item third-slider-bg" data-background="/static/assets/img/slider/third_slider_bg.jpg">
+                        <div class="container custom-container-two">
+                            <div class="third-slider-wrap">
+                                <div class="row align-items-center">
+                                    <div class="col-lg-6">
+                                        <div class="slider-content">
+                                            <h3 class="sub-title" data-animation-in="fadeInUp" data-delay-in=".2" data-duration-in="1.5">best offer !</h3>
+                                            <h2 class="title" data-animation-in="fadeInUp" data-delay-in=".4" data-duration-in="1.5">Gym sports shoes</h2>
+                                            <p data-animation-in="fadeInUp" data-delay-in=".6" data-duration-in="1.5">Get up to 50% off Today Only</p>
+                                            <a href="shop-sidebar.html" class="btn" data-animation-in="fadeInUp" data-delay-in=".8" data-duration-in="1.5">Shop now</a>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="third-slider-img">
+                                            <div class="img-shape" data-background="img/slider/third_slide_shape.png" data-animation-in="zoomIn"
+                                                data-delay-in="1" data-duration-in="1.5"></div>
+                                            <img src="/static/assets/img/slider/third_slider_img04.png" alt="" class="main-img" data-animation-in="slideInRight2"
+                                                data-delay-in="1" data-duration-in="1.5">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- slider-area-end -->
+
+            
+            <!-- trending-product-area -->
+            
+
+            <!-- new-arrival-area -->
+            <section class="new-arrival-area pt-95 pb-45">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-xl-4 col-lg-6">
+                            <div class="section-title title-style-two text-center mb-45">
+                                <h3 class="title">New Arrival Collection</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row justify-content-center">
+                        <div class="col-lg-6">
+                            <div class="new-arrival-nav mb-35">
+                                <button class="active" data-filter="*">Top Product</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row new-arrival-active">
+                        
+                        
+                        {%for prod in products.items %}
+                        <div class="col-xl-3 col-lg-4 col-sm-6 grid-item grid-sizer cat-two">
+                            <div class="new-arrival-item text-center mb-50">
+                                <div class="thumb mb-25">
+                                    <div class="discount-tag new">Top</div>
+                                    {%set fname = 'products/' + prod.picture1 %}
+                                    <a href='/product/{{prod.sno}}'><img src="{{url_for('static', filename=fname)}}" alt=""></a>
+
+                                    <!-- <a href="shop-details.html"><img src="/static/assets/img/product/shoes_arrival_product04.jpg" alt=""></a> -->
+                                    <div class="product-overlay-action">
+                                        <ul>
+                                            <li><a href='/product/{{prod.sno}}'><i class="far fa-heart"></i></a></li>
+                                            <li><a href='/product/{{prod.sno}}'><i class="far fa-eye"></i></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="content">
+                                    <h5><a href='/product/{{prod.sno}}'>{{prod.productname}}</a></h5>
+                                    <span class="price">Rs.{{prod.price}}</span>
+                                </div>
+                            </div>
+                        </div>
+                        {%endfor%}
+                        
+                    </div>
+                </div>
+            </section>
+            <!-- new-arrival-area-end -->
+
+            <!-- shoes-banner-area -->
+            <section class="shoes-banner-area">
+                <div class="container">
+                    <div class="shoes-banner-active">
+                        <div class="shoes-banner-bg" data-background="/static/assets/img/bg/shoes-banner_bg.jpg">
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="shoes-banner-content">
+                                        <h6>Athletes Shoes</h6>
+                                        <h2>9 Best <span>Shoes for</span> Standing All Day Review 2020</h2>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="shoes-banner-bg" data-background="/static/assets/img/bg/shoes-banner_bg.jpg">
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="shoes-banner-content">
+                                        <h6>Athletes Shoes</h6>
+                                        <h2>3 Best <span>Shoes for</span> Standing All Day Review 2021</h2>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="shoes-banner-bg" data-background="/static/assets/img/bg/shoes-banner_bg.jpg">
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="shoes-banner-content">
+                                        <h6>Athletes Shoes</h6>
+                                        <h2>8 Best <span>Shoes for</span> Standing All Day Review 2021</h2>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- shoes-banner-area-end -->
+
+            <!-- promo-services -->
+            <section class="promo-services pt-70 pb-25">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-3 col-md-6 col-sm-8">
+                            <div class="promo-services-item mb-40">
+                                <div class="icon"><img src="/static/assets/img/icon/promo_icon01.png" alt=""></div>
+                                <div class="content">
+                                    <h6>payment & delivery</h6>
+                                    <p>Delivered, when you receive arrives</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-sm-8">
+                            <div class="promo-services-item mb-40">
+                                <div class="icon"><img src="/static/assets/img/icon/promo_icon02.png" alt=""></div>
+                                <div class="content">
+                                    <h6>Return Product</h6>
+                                    <p>Retail, a Product Return Process</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-sm-8">
+                            <div class="promo-services-item mb-40">
+                                <div class="icon"><img src="/static/assets/img/icon/promo_icon03.png" alt=""></div>
+                                <div class="content">
+                                    <h6>money back guarantee</h6>
+                                    <p>Options Including 24/7</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-sm-8">
+                            <div class="promo-services-item mb-40">
+                                <div class="icon"><img src="/static/assets/img/icon/promo_icon04.png" alt=""></div>
+                                <div class="content">
+                                    <h6>Quality support</h6>
+                                    <p>Support Options Including 24/7</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- promo-services-end -->
+
+            <!-- instagram-post-area -->
+            <div class="instagram-post-area">
+                <div class="container-fluid p-0 fix">
+                    <div class="row no-gutters insta-active">
+                        <div class="col">
+                            <div class="insta-post-item">
+                                <a href="#">
+                                    <i class="fab fa-instagram"></i>
+                                    <img src="/static/adminassets/images/slides/slide2.png" alt="">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="insta-post-item">
+                                <a href="#">
+                                    <i class="fab fa-instagram"></i>
+                                    <img src="/static/adminassets/images/slides/1.png" alt="">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="insta-post-item">
+                                <a href="#">
+                                    <i class="fab fa-instagram"></i>
+                                    <img src="/static/adminassets/images/slides/slide1.png" alt="">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="insta-post-item">
+                                <a href="#">
+                                    <i class="fab fa-instagram"></i>
+                                    <img src="/static/adminassets/images/slides/2.png" alt="">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="insta-post-item">
+                                <a href="#">
+                                    <i class="fab fa-instagram"></i>
+                                    <img src="/static/adminassets/images/slides/slide1.png" alt="">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="insta-post-item">
+                                <a href="#">
+                                    <i class="fab fa-instagram"></i>
+                                    <img src="/static/adminassets/images/slides/3.png" alt="">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="insta-post-item">
+                                <a href="#">
+                                    <i class="fab fa-instagram"></i>
+                                    <img src="/static/adminassets/images/slides/slide2.png" alt="">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- instagram-post-area-end -->
+
+        </main>
+        <!-- main-area-end -->
+
+
+        <!-- footer-area -->
+        <footer class="dark-bg pt-55 pb-80">
+            <div class="container">
+                <div class="footer-top-wrap">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="footer-logo">
+                                <a href="index.html"><img src="/static/assets/img/logo/w_logo.png" alt=""></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-middle-wrap">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="footer-link-wrap">
+                                <nav class="menu-links">
+                                    <ul>
+                                        <li><a href="about-us.html">About us</a></li>
+                                        <li><a href="shop-sidebar.html">Store</a></li>
+                                        <li><a href="contact.html">Locations</a></li>
+                                        <li><a href="contact.html">Contact</a></li>
+                                        <li><a href="contact.html">Support</a></li>
+                                        <li><a href="#">Policy</a></li>
+                                        <li><a href="#">Faqs</a></li>
+                                    </ul>
+                                </nav>
+                                <div class="footer-social">
+                                    <ul>
+                                        <li><a href="/www.facebook.com"><i class="fab fa-facebook-f"></i></a></li>
+                                        <li><a href="/www.twitter.com"><i class="fab fa-twitter"></i></a></li>
+                                        <li><a href="/www.youtube.com"><i class="fab fa-youtube"></i></a></li>
+                                        <li><a href="/www.instagram.com"><i class="fab fa-instagram"></i></a></li>
+                                        <li><a href="/www.linkedin.com"><i class="fab fa-linkedin-in"></i></a></li>
+                                        <li><a href="/www.google.com"><i class="fab fa-google"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="copyright-wrap">
+                    <div class="row align-items-center">
+                        <div class="col-lg-6">
+                            <div class="copyright-text">
+                                <p>&copy; 2021 <a href="index.html">adara</a>. All Rights Reserved | Ph (+09) 456 457869</p>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- footer-area-end -->
+
+
+
+
+
+		<!-- JS here -->
+        <script src="/static/assets/js/vendor/jquery-3.5.0.min.js"></script>
+        <script src="/static/assets/js/popper.min.js"></script>
+        <script src="/static/assets/js/bootstrap.min.js"></script>
+        <script src="/static/assets/js/isotope.pkgd.min.js"></script>
+        <script src="/static/assets/js/imagesloaded.pkgd.min.js"></script>
+        <script src="/static/assets/js/jquery.magnific-popup.min.js"></script>
+        <script src="/static/assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+        <script src="/static/assets/js/bootstrap-datepicker.min.js"></script>
+        <script src="/static/assets/js/jquery.nice-select.min.js"></script>
+        <script src="/static/assets/js/jquery.countdown.min.js"></script>
+        <script src="/static/assets/js/swiper-bundle.min.js"></script>
+        <script src="/static/assets/js/jarallax.min.js"></script>
+        <script src="/static/assets/js/slick.min.js"></script>
+        <script src="/static/assets/js/wow.min.js"></script>
+        <script src="/static/assets/js/nav-tool.js"></script>
+        <script src="/static/assets/js/plugins.js"></script>
+        <script src="/static/assets/js/main.js"></script>
+    </body>
+</html>

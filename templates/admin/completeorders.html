@@ -1,0 +1,80 @@
+{% extends "layouts/adminlayout.html"%}
+
+{% block body %}
+        <!-- dashboard inside content start -->
+
+<div class="app-content">
+    <div class="content-wrapper">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col">
+                    <div class="page-description" style="text-align: center;">
+                        <h1>Completed Orders</h1>
+                    </div>
+                </div>
+            </div>
+            <!-- Jinja tempplating for showing flash messages start-->
+            {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                    <div class="alert alert-{{category}} alert-dismissible fade show" role="alert">
+                    {{message}}
+                    <button type="button" class="btn-close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                    </div>
+                {% endfor %}
+            {% endif %}
+            {% endwith %}
+            <!-- Jinja tempplating for showing flash messages end-->
+            <div class="row">
+                <div class="col">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5 class="card-title">Basic</h5>
+                        </div>
+                        <div class="card-body">
+                            <table id="datatable1" class="display" style="width:100%">
+                                <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Customer ID</th>
+                                        <th>Product ID</th>
+                                        <th>Product Price</th>
+                                        <th>Qty</th>
+                                        <th>Order Date</th>
+                                        <th>Total Bill</th>
+                                        <th>Address</th>
+                                        <th>Accept</th>
+                                        <th>Decline</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {%for order in order%}
+                                    <tr>
+                                        <td>{{order.id}}</td>
+                                        <td>{{order.customerid}}</td>
+                                        <td>{{order.productid}}</td>
+                                        <td>{{order.productprice}}</td>
+                                        <th>{{order.qty}}</th>
+                                        <td>{{order.orderdate}}</td>
+                                        <td>{{order.totalbill}}</td>
+                                        <td>{{order.address}}</td>
+                                        <td><a href="/deletecompleteorder/{{order.customerid}}"><button type="button" class="btn btn-danger">Decline</button></a></td>
+                                        
+                                        <!-- <td><a href="/productdelete/{{order.productid}}"><button type="button" class="btn btn-danger btn-burger m-r-sm"><i class="material-icons">delete_outline</i></button></a></td> -->
+                                    </tr>
+                                    {%endfor%}
+                                </tbody>
+                                
+                            </table>
+                        </div>
+                    </div> 
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- dashboard inside content end -->
+
+{%endblock%}
